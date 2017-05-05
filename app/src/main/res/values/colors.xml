@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="nhlBlueLight">#9EC1DF</color>
+    <color name="nhlGrey">#818181</color>
+    <color name="nhlGreyLight">#BFBFBF</color>
+    <color name="nhlWhite">#DBE2E0</color>
+    <color name="nhlBlue">#6F96E4</color>
+    <color name="nhlRed">#bc869c</color>
+</resources>

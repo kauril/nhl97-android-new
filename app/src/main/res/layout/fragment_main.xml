@@ -1,0 +1,206 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.iosdev.nhl97.MainFragment"
+    android:layout_gravity="center"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainLinearLayout">
+
+            <LinearLayout
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="30dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="@string/guest"
+                        android:id="@+id/guest"
+                        android:paddingBottom="25dp"
+                        android:paddingTop="25dp"
+                        android:textSize="20sp"/>
+                    <NumberPicker
+                        android:id="@+id/teamPickerGuest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/guestTeamName"
+                        android:textAlignment="center"
+                        android:text="Washington"
+                        android:paddingTop="15dp"
+                         />
+            </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:id="@+id/goals"
+                    android:text="@string/goals"
+                    android:textSize="20sp"
+                    android:paddingBottom="25dp"
+                    android:paddingTop="25dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                            <NumberPicker
+                                android:id="@+id/goalPickerGuest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true" />
+                            <NumberPicker
+                                android:id="@+id/goalPickerHome"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_centerInParent="true" />
+                </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="@string/home"
+                android:id="@+id/home"
+                android:textSize="20sp"
+                android:paddingBottom="25dp"
+                android:paddingTop="25dp" />
+            <NumberPicker
+                android:id="@+id/teamPickerHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/homeTeamName"
+                android:textAlignment="center"
+                android:text="Washington"
+                android:paddingTop="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="@string/shots"
+                    android:id="@+id/shots"
+                    android:textSize="20sp"
+                    android:paddingBottom="25dp"
+                    android:paddingTop="25dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                            <NumberPicker
+                                android:id="@+id/shotsGuest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_centerInParent="true" />
+                            <NumberPicker
+                                android:id="@+id/shotsHome"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true" />
+                </LinearLayout>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:paddingTop="130dp">
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/overtime"
+                        android:id="@+id/overtimeCheckBox"
+                        android:gravity="center"
+                        android:textColorLink="@color/nhlRed"
+                        android:layout_marginLeft="50dp" />
+
+                    <CheckBox
+                        android:id="@+id/shootoutCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shootout"
+                        android:visibility="gone"
+                        android:textColorLink="@color/nhlRed"
+                        android:layout_marginLeft="50dp" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_game"
+                android:id="@+id/addBtn"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="130dp" />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:paddingTop="50dp"
+            android:id="@+id/select_teams"
+            android:visibility="gone"
+            android:textSize="32sp"
+
+            android:text="@string/select_teams"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:id="@+id/assignTeams"
+            android:hint="@string/assign_teams"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+</FrameLayout>

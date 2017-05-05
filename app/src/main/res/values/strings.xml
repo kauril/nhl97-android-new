@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">NHL97</string>
+
+    <string name="overtime">Overtime</string>
+    <string name="shootout">Shootouts</string>
+    <string name="guest">Guest</string>
+    <string name="home">Home</string>
+    <string name="shots">Shots</string>
+    <string name="goals">Goals</string>
+    <string name="date">Date</string>
+    <string name="pick_team">Pick your team</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="all_teams_selected">All teams are selected</string>
+    <string name="add">Add</string>
+    <string name="team">Team</string>
+    <string name="player">Player</string>
+    <string name="select_teams">You must assign atleast two players with teams to start adding results</string>
+    <string name="assign_teams">Assign Teams</string>
+    <string name="games_played">Games played</string>
+    <string name="winning_percentage">Winning percentage</string>
+    <string name="wins">Wins</string>
+    <string name="overtimes">Overtimes</string>
+    <string name="overtime_wins">Overtime wins</string>
+    <string name="overtime_loses">Overtime loses</string>
+    <string name="shootouts">Shootouts</string>
+    <string name="shootout_wins">Shootout wins</string>
+    <string name="shootout_loses">Shootout loses</string>
+    <string name="sort_by">Sort by:</string>
+    <string name="start_new_season">Start new season</string>
+    <string name="ok">OK</string>
+    <string name="add_game">ADD GAME</string>
+
+    <string name="gf">Goals for</string>
+    <string name="ga">Goals against</string>
+    <string name="sf">Shots for</string>
+    <string name="sa">Shots against</string>
+    <string name="gp">Goal percentage</string>
+    <string name="sp">Save percentage</string>
+    <string name="ot_wins">Overtime wins</string>
+    <string name="so_wins">Shootout wins</string>
+    <string name="goals_per_game">Goals per game</string>
+    <string name="goals_for_per_game">Goals for per game</string>
+    <string name="goals_against_per_game">Goals against per game</string>
+    <string name="shots_per_game">Shots per game</string>
+    <string name="shots_for_per_game">Shots for per game</string>
+    <string name="shots_against_per_game">Shots against per game</string>
+    <string name="loses">Loses</string>
+    <string name="home_wins">Home Wins</string>
+    <string name="guest_wins">Guest wins</string>
+    <string name="home_loses">Home loses</string>
+    <string name="guest_loses">Guest loses</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_statistics">Statistics</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+
+</resources>
