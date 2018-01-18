@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements NewSeasonFragment
     public static MainActivity getInstance() {
         Log.v("getInstance", "ma");
         return ma;
-
     }
 
     //DBService initialization

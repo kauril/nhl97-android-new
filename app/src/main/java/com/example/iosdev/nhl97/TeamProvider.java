@@ -39,6 +39,7 @@ public class TeamProvider extends ContentProvider {
         SeasonNameOpenHelper seasonNameOpenHelper = new SeasonNameOpenHelper(getContext());
         seasonNameOpenHelper.getWritableDatabase();
         TeamContract.getSeasonName(context);
+        Log.v("provideriis", "sdsdfdf");
 
         dbHelper = new TeamOpenHelper(context);
 

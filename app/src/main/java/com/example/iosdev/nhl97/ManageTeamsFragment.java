@@ -26,11 +26,17 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -62,12 +68,23 @@ public class ManageTeamsFragment extends Fragment implements LoaderManager.Loade
     String name;
     TeamOpenHelper dbHelper;
     SQLiteDatabase sqLiteDatabase;
+    TeamContract teamContract;
 
     private String team;
     private String teamChar;
     private String id;
 
     private static ManageTeamsFragment mtf = null;
+
+    //Google firebase references
+    //requires <uses-permission android:name="android.permission.INTERNET"/> in manifest file
+    FirebaseDatabase db;
+    DatabaseReference mDatabase;
+    DatabaseReference season;
+
+
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference();
 
     public static ManageTeamsFragment getInstance() {
         Log.v("getInstance", "tff");
@@ -83,6 +100,11 @@ public class ManageTeamsFragment extends Fragment implements LoaderManager.Loade
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mtf = this;
+        String databaseName = teamContract.DATABASE_NAME;
+        //Initializing google firebase db root and path to /games URL
+        mDatabase =  db.getInstance().getReference();
+        season = mDatabase.child("Seasoncreated: " + databaseName);
+
         nhlFont = Typeface.createFromAsset(getActivity().getAssets(),  "fonts/NHL.ttf");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -136,12 +158,9 @@ public class ManageTeamsFragment extends Fragment implements LoaderManager.Loade
 
         dbHelper = new TeamOpenHelper(getContext());
 
-
-
         Log.v("inflateee","sadas");
         tp.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         getLoaderManager().initLoader(0, null, this);
-
 
         addName.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -179,21 +198,24 @@ public class ManageTeamsFragment extends Fragment implements LoaderManager.Loade
         );
         values.clear();
 
-        Team newTeam = new Team(name, team, teamChar);
+        Team newTeam = new Team(name, team, teamChar,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 
 
-        try {
+
+
+        /*try {
             MainActivity.getInstance().attachPlayerToTheTeamNode(newTeam);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-
-
-
+        }*/
 
         String sql = TeamContract.createTeamTable(team);
         sqLiteDatabase = dbHelper.getWritableDatabase();
         sqLiteDatabase.execSQL(sql);
+
+
+        season.child("teams").child(team).child("stats").setValue(newTeam);
+        Log.v("inflateee","uussitesstititi");
 
 
 
@@ -202,9 +224,13 @@ public class ManageTeamsFragment extends Fragment implements LoaderManager.Loade
 
             } else {
                String insert = TeamContract.initializeTeamTable(team, dfu.teams[i]);
-
+                //newTeam.teamChar = dfu.teams2[i];
+                //newTeam.team = dfu.teams[i];
+                //season.child("teams").child(team).child(dfu.teams[i]).setValue(newTeam);
                 sqLiteDatabase = dbHelper.getWritableDatabase();
                 sqLiteDatabase.execSQL(insert);
+
+
 
             }
         }
@@ -213,11 +239,33 @@ public class ManageTeamsFragment extends Fragment implements LoaderManager.Loade
 
                     String  insertOldTeamsAndPlayersToNewTeam= TeamContract.addPlayerToTeamTable(team, players[i],teamsWithPlayers[i]);
                     String insertNewTeamAndPlayerToOldTeams = TeamContract.addPlayerToTeamTable(teamsWithPlayers[i], name ,team);
+
+                    TeamComparison newTeamComparison = new TeamComparison(players[i],"","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+
                     sqLiteDatabase = dbHelper.getWritableDatabase();
                     sqLiteDatabase.execSQL(insertOldTeamsAndPlayersToNewTeam);
                     sqLiteDatabase.execSQL(insertNewTeamAndPlayerToOldTeams);
+            Log.v("uusi",team +"");
+            Log.v("vanha",teamsWithPlayers[i] + "");
+
+            season.child("teams").child(team).child(teamsWithPlayers[i]).setValue(newTeamComparison);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            season.child("teams").child(teamsWithPlayers[i]).child(team).setValue(newTeam);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            Log.v("uusi",team +"");
+            Log.v("vanha",teamsWithPlayers[i] + "");
         };
         dbHelper.close();
+
+
         getLoaderManager().restartLoader(0, null, this);
 
         //Restarts Application to recreate fragmentPagerAdapter and to avoid app crashing

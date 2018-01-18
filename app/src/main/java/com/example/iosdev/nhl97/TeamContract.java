@@ -9,6 +9,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.format.DateFormat;
 import android.util.Log;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -22,6 +27,16 @@ public class TeamContract {
     static TeamOpenHelper dbHelperTeam;
     static String DATABASE_NAME = "";
     static String dateForSeasonName;
+    private static TeamContract tc = null;
+
+
+
+
+
+    public static TeamContract getInstance() {
+        Log.v("getInstance", "tff");
+        return tc;
+    }
 
     //Method to add new season
     //New season is created by changing the name of DATABASE_NAME variable after which new database is
@@ -36,6 +51,8 @@ public class TeamContract {
         dbHelper = new SeasonNameOpenHelper(context);
         String sql = "insert into seasonName (name)" +
                 "values('" + ts + "');";
+
+
 
         //new row is added to seasonName DB
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -69,6 +86,7 @@ public class TeamContract {
 
     //Method to initialize DATABASE_NAME variable
     public static void getSeasonName (Context context){
+
         dbHelper = new SeasonNameOpenHelper(context);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         //Last row from seasonName is added to DATABASE_NAME variable so there will always be the newest
@@ -85,6 +103,8 @@ public class TeamContract {
             Log.v("getseasonName", seasonName + "dsdd");
         cursor.close();
         DATABASE_NAME = seasonName;
+
+        Log.v("newseasonii","SASSAFRASES " + DATABASE_NAME);
 
 
     }
