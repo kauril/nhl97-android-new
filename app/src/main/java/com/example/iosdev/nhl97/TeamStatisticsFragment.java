@@ -77,6 +77,7 @@ public class TeamStatisticsFragment extends Fragment implements LoaderManager.Lo
     TextView homeLoses;
     TextView guestWins;
     TextView guestLoses;
+    TextView kpsPercentageTV;
 
 
     //Reference declarations
@@ -183,6 +184,7 @@ public class TeamStatisticsFragment extends Fragment implements LoaderManager.Lo
         homeLoses = (TextView) view.findViewById(R.id.teamHomeLoses);
         guestWins = (TextView) view.findViewById(R.id.teamGuestWins);
         guestLoses = (TextView) view.findViewById(R.id.teamGuestLoses);
+        kpsPercentageTV = (TextView) view.findViewById(R.id.kpsPercentage);
 
 
         //Reference to TeamOpenHelper for further calls to database
@@ -468,6 +470,14 @@ public class TeamStatisticsFragment extends Fragment implements LoaderManager.Lo
                 wpString = "-";
             }
             winningPercent.setText(wpString + "%");
+
+            float kpsPercentage = (((float) home_wins + home_loses) / (home_wins + home_loses + guest_wins +guest_loses) * 100);
+            String kpsString = String.format("%2.00f", kpsPercentage);
+            if(kpsString.equals("NaN")){
+                kpsString = "-";
+            }
+
+            kpsPercentageTV.setText(kpsString + "%");
 
 
     }

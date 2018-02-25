@@ -100,7 +100,7 @@ public class MainFragment extends Fragment implements LoaderManager.LoaderCallba
     LinearLayout main;
     Button assignTeams;
     CheckBox overtime;
-    CheckBox shootOut;
+    CheckBox shootout;
     NumberPicker tpg, gpg, tph, gph, sg, sh;
 
 
@@ -335,7 +335,7 @@ public class MainFragment extends Fragment implements LoaderManager.LoaderCallba
         sg = (NumberPicker) view.findViewById(R.id.shotsGuest);
         sh = (NumberPicker) view.findViewById(R.id.shotsHome);
         overtime = (CheckBox) view.findViewById(R.id.overtimeCheckBox);
-        shootOut = (CheckBox) view.findViewById(R.id.shootoutCheckBox);
+        shootout = (CheckBox) view.findViewById(R.id.shootoutCheckBox);
 
         //UI element attachments
 
@@ -397,18 +397,19 @@ public class MainFragment extends Fragment implements LoaderManager.LoaderCallba
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     isOvertime = true;
-                    shootOut.setVisibility(View.VISIBLE);
+                    shootout.setChecked(false);
+                    shootout.setVisibility(View.VISIBLE);
                 } else {
                     isOvertime = false;
                     isShootout = false;
-                    shootOut.setVisibility(View.GONE);
+                    shootout.setVisibility(View.GONE);
 
                 }
 
             }
         });
 
-        shootOut.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        shootout.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -455,6 +456,8 @@ public class MainFragment extends Fragment implements LoaderManager.LoaderCallba
                        int losingOvertime = 0;
                        int winningShootout = 0;
                        int losingShootout = 0;
+
+
 
                        //checking if shootout is checked and that other team wins only by one goal
 
@@ -696,6 +699,9 @@ public class MainFragment extends Fragment implements LoaderManager.LoaderCallba
                            sqLiteDatabase.execSQL(sql4);
                            dbHelper.close();
 
+                           Toast.makeText(getActivity(), guestTeam + " - " + homeTeam + " " + guestGoals + " - " + homeGoals + " added!", Toast.LENGTH_LONG).show();
+
+
 
                        } else if (guestGoals > homeGoals) {
                            //Checks if guest team wins 6-1 or 10-0. If so camera is launched to for taking picture of that event
@@ -703,6 +709,131 @@ public class MainFragment extends Fragment implements LoaderManager.LoaderCallba
 
                                dispatchTakePictureIntent();
                            }
+
+                           DatabaseReference pushResult;
+                           pushResult = season.child("games").push();
+
+                           Game game = new Game(guestTeam, guestGoals, homeGoals, homeTeam, guestShots, homeShots, isOvertime, isShootout, ts);
+                           pushResult.setValue(game);
+
+                           // Adding data to winning guestTeams general statistics
+                           // nää periaatteessa toimii mut saattaa olla et joku sekunti limitti firebases ni pelottaa vähä
+
+                           final int finalOverTime = overTime;
+                           final int finalShootOut = shootOut;
+                           final int finalWinningOvertime = winningOvertime;
+                           final int finalWinningShootout = winningShootout;
+                           season.child("teams").child(guestTeam).child("stats").addListenerForSingleValueEvent(new ValueEventListener() {
+                               @Override
+                               public void onDataChange(DataSnapshot dataSnapshot) {
+                                   Team guest = dataSnapshot.getValue(Team.class);
+
+                                   guest.goals_for = guest.goals_for + guestGoals;
+                                   guest.goals_against = guest.goals_against + homeGoals;
+                                   guest.shots_for = guest.shots_for + guestShots;
+                                   guest.shots_against = guest.shots_against + homeShots;
+                                   guest.guest_wins = guest.guest_wins + 1;
+                                   guest.overtime_wins = guest.overtime_wins + finalWinningOvertime;
+                                   guest.overtimes = guest.overtimes + finalOverTime;
+                                   guest.shootout_wins = guest.shootout_wins + finalWinningShootout;
+                                   guest.shootouts = guest.shootouts + finalShootOut;
+                                   guest.wins = guest.wins + 1;
+
+                                   season.child("teams").child(guestTeam).child("stats").setValue(guest);
+
+                               }
+
+                               @Override
+                               public void onCancelled(DatabaseError databaseError) {
+                                   // ...
+                               }
+                           });
+
+                           // Adding data to winning guestteams hometeam statistics for a comparison
+                           // Adding wins + 1 to guestteams hometeam means that guestteam has won hometeam
+
+                           season.child("teams").child(guestTeam).child(homeTeam).addListenerForSingleValueEvent(new ValueEventListener() {
+                               @Override
+                               public void onDataChange(DataSnapshot dataSnapshot) {
+                                   Team homeTeamInGuest = dataSnapshot.getValue(Team.class);
+
+
+                                   homeTeamInGuest.goals_for = homeTeamInGuest.goals_for + guestGoals;
+                                   homeTeamInGuest.goals_against = homeTeamInGuest.goals_against + homeGoals;
+                                   homeTeamInGuest.shots_for = homeTeamInGuest.shots_for + guestShots;
+                                   homeTeamInGuest.shots_against = homeTeamInGuest.shots_against + homeShots;
+                                   homeTeamInGuest.guest_wins = homeTeamInGuest.guest_wins + 1;
+                                   homeTeamInGuest.overtime_wins = homeTeamInGuest.overtime_wins + finalWinningOvertime;
+                                   homeTeamInGuest.overtimes = homeTeamInGuest.overtimes + finalOverTime;
+                                   homeTeamInGuest.shootout_wins = homeTeamInGuest.shootout_wins + finalWinningShootout;
+                                   homeTeamInGuest.shootouts = homeTeamInGuest.shootouts + finalShootOut;
+                                   homeTeamInGuest.wins = homeTeamInGuest.wins + 1;
+
+                                   season.child("teams").child(guestTeam).child(homeTeam).setValue(homeTeamInGuest);
+                               }
+
+                               @Override
+                               public void onCancelled(DatabaseError databaseError) {
+                                   // ...
+                               }
+                           });
+
+                           // Adding data to losing hometeams general statistics
+
+                           final int finalLosingOvertime = losingOvertime;
+                           final int finalLosingShootout = losingShootout;
+                           season.child("teams").child(homeTeam).child("stats").addListenerForSingleValueEvent(new ValueEventListener() {
+                               @Override
+                               public void onDataChange(DataSnapshot dataSnapshot) {
+                                   Team home = dataSnapshot.getValue(Team.class);
+
+
+                                   home.goals_for = home.goals_for + homeGoals;
+                                   home.goals_against = home.goals_against + guestGoals;
+                                   home.shots_for = home.shots_for + homeShots;
+                                   home.shots_against = home.shots_against + guestShots;
+                                   home.home_loses = home.home_loses + 1;
+                                   home.overtime_loses = home.overtime_loses + finalLosingOvertime;
+                                   home.overtimes = home.overtimes + finalOverTime;
+                                   home.shootout_loses = home.shootout_loses + finalLosingShootout;
+                                   home.shootouts = home.shootouts + finalShootOut;
+                                   home.loses = home.loses + 1;
+
+                                   season.child("teams").child(homeTeam).child("stats").setValue(home);
+                               }
+
+                               @Override
+                               public void onCancelled(DatabaseError databaseError) {
+                                   // ...
+                               }
+                           });
+
+                           // Adding data to losing hometeams guestteam statistics for a comparison
+                           // Adding loses + 1 to hometeams guestteam means that hometeam has lost to guestteam
+
+                           season.child("teams").child(homeTeam).child(guestTeam).addListenerForSingleValueEvent(new ValueEventListener() {
+                               @Override
+                               public void onDataChange(DataSnapshot dataSnapshot) {
+                                   Team guestTeamInHome = dataSnapshot.getValue(Team.class);
+                                   guestTeamInHome.goals_for = guestTeamInHome.goals_for + homeGoals;
+                                   guestTeamInHome.goals_against = guestTeamInHome.goals_against + guestGoals;
+                                   guestTeamInHome.shots_for = guestTeamInHome.shots_for + homeShots;
+                                   guestTeamInHome.shots_against = guestTeamInHome.shots_against + guestShots;
+                                   guestTeamInHome.home_loses = guestTeamInHome.home_loses + 1;
+                                   guestTeamInHome.overtime_loses = guestTeamInHome.overtime_loses + finalLosingOvertime;
+                                   guestTeamInHome.overtimes = guestTeamInHome.overtimes + finalOverTime;
+                                   guestTeamInHome.shootout_loses = guestTeamInHome.shootout_loses + finalLosingShootout;
+                                   guestTeamInHome.shootouts = guestTeamInHome.shootouts + finalShootOut;
+                                   guestTeamInHome.loses = guestTeamInHome.loses + 1;
+
+                                   season.child("teams").child(homeTeam).child(guestTeam).setValue(guestTeamInHome);
+                               }
+
+                               @Override
+                               public void onCancelled(DatabaseError databaseError) {
+                                   // ...
+                               }
+                           });
 
                            //Results are added to team database
                            String sql = TeamContract.WinningTeam(guestTeam, guestGoals, homeGoals, guestShots, homeShots, overTime, winningOvertime, shootOut, winningShootout, 0, 1);
@@ -739,12 +870,14 @@ public class MainFragment extends Fragment implements LoaderManager.LoaderCallba
                            sqLiteDatabase = dbHelper.getWritableDatabase();
                            sqLiteDatabase.execSQL(sql4);
                            dbHelper.close();
+
+                           Toast.makeText(getActivity(), guestTeam + " - " + homeTeam + " " + guestGoals + " - " + homeGoals + " added!", Toast.LENGTH_LONG).show();
+
                        }
 
 
-                       //Add new game
-                        if(resultCount < 10) {
-                            if(isResultDeleted){
+
+
                                 ContentValues values = new ContentValues();
                                 values.put(ResultContract.KEY_GUEST_TEAM, guestTeam);
                                 values.put(ResultContract.KEY_HOME_TEAM, homeTeam);
@@ -762,75 +895,43 @@ public class MainFragment extends Fragment implements LoaderManager.LoaderCallba
                                         values
                                 );
                                 values.clear();
-                                isResultDeleted = false;
-                            }else {
-                                //Create ContentValues for Result table
 
-                                ContentValues values = new ContentValues();
-                                values.put(ResultContract.KEY_GUEST_TEAM, guestTeam);
-                                values.put(ResultContract.KEY_HOME_TEAM, homeTeam);
-                                values.put(ResultContract.KEY_GUEST_GOALS, guestGoals);
-                                values.put(ResultContract.KEY_HOME_GOALS, homeGoals);
-                                values.put(ResultContract.KEY_GUEST_SHOTS, guestShots);
-                                values.put(ResultContract.KEY_HOME_SHOTS, homeShots);
-                                values.put(ResultContract.KEY_IS_DUMMY, 0);
-                                values.put(ResultContract.KEY_OVERTIME, overTime);
-                                values.put(ResultContract.KEY_SHOOTOUTS, shootOut);
-                                values.put(ResultContract.KEY_DATE, ts);
-                                Log.v("resultCount", resultCount + "");
-                                String[] updateArgs = {String.valueOf(resultCount + 1)};
-                                getActivity().getContentResolver().update(
-                                        ResultProvider.CONTENT_URI,
-                                        values,
-                                        "_id=?",
-                                        updateArgs
-                                );
-                                values.clear();
-                            }
-                        } else {
 
-                            String updateResultTable = "UPDATE result" +
-                                     " SET guestTeam='" + guestTeam + "',"
-                                    + "homeTeam='" + homeTeam + "',"
-                                    + "guestGoals=" + guestGoals + ","
-                                    + "homeGoals=" + homeGoals + ","
-                                    + "guestShots=" + guestShots + ","
-                                    + "homeShots=" + homeShots + ","
-                                    + "overTime=" + overTime + ","
-                                    + "shootOuts=" + shootOut + ","
-                                    + "shootOuts=" + shootOut + ","
-                                    + "date='" + ts + "'"
-                                    + " WHERE date=(SELECT MIN(date) FROM result);";
-                            sqLiteDatabase = roHelper.getWritableDatabase();
-                            sqLiteDatabase.execSQL(updateResultTable);
-                            roHelper.close();
-                           /* String[] updateArgs = {"(SELECT MIN(date) FROM result)"};
-                            getActivity().getContentResolver().update(
-                                    ResultProvider.CONTENT_URI,
-                                    values,
-                                    "date=?",
-                                    updateArgs
-                            );
-                            values.clear();*/
-                        }
                       /* getActivity().getContentResolver().insert(
                                ResultProvider.CONTENT_URI,
                                values);
                        values.clear();*/
 
-                       DatabaseReference pushResult;
-                       pushResult = season.child("games").push();
 
-                       Game game = new Game(guestTeam, guestGoals, homeGoals, homeTeam, guestShots, homeShots, isOvertime, isShootout, ts);
-                       pushResult.setValue(game);
 
                        //Push result to node.js
 
-                       try {
+                       /*try {
                            MainActivity.getInstance().addGameToNode(game);
                        } catch (IOException e) {
                            e.printStackTrace();
-                       }
+                       }*/
+
+
+                       //format goals and shots to avoid game adding multiple times
+
+                       gpg.setValue(0);
+                       gph.setValue(0);
+                       sg.setValue(0);
+                       sh.setValue(0);
+
+                       guestGoals = 0;
+                       homeGoals = 0;
+                       guestShots = 0;
+                       homeShots = 0;
+
+                       isOvertime = false;
+                       isShootout = false;
+
+                       overtime.setChecked(false);
+                       shootout.setChecked(false);
+
+
 
 
 

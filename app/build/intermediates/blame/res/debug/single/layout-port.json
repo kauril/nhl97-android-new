@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/result_list.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/result_list.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/activity_main.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/activity_main.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/fragment_main.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/fragment_main.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/fragment_team_statistics.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/fragment_team_statistics.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/fragment_overall_statistics.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/fragment_overall_statistics.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/team_list_statistics.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/team_list_statistics.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/fragment_statistics.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/fragment_statistics.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/fragment_feed.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/fragment_feed.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/fragment_manage_teams.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/fragment_manage_teams.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-port/fragment_list.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/src/main/res/layout-port/fragment_list.xml"
+    }
+]

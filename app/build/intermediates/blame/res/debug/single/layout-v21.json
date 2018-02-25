@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_icon_group.xml"
+    }
+]

@@ -71,8 +71,8 @@ public class TeamFeedFragment extends Fragment implements  LoaderManager.LoaderC
         View view = inflater.inflate(R.layout.fragment_team_feed, container, false);
         view.getBackground().setAlpha(180);
         nhlFont = Typeface.createFromAsset(getActivity().getAssets(),  "fonts/NHL.ttf");
-        String[] fromFields = new String[]{"team", "player", "games_played", "wins", "loses", "goals_for", TeamContract.KEY_GOALS_AGAINST};
-        int[] toFields = new int[]{ R.id.team, R.id.player, R.id.games_played, R.id.wins, R.id.loses, R.id.goals_for, R.id.goals_against};
+        String[] fromFields = new String[]{"team", "player"};
+        int[] toFields = new int[]{ R.id.team, R.id.player};
         mAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.team_list,

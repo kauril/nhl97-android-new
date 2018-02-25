@@ -27,13 +27,21 @@ import android.widget.TextView;
  * Use the {@link OverallStatisticsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+//Adding new sort criterias:
+    //1.Add name of the criteria shown to user in below to sortStatsContent
+    //2.Add new criterias to sortStats.setOnValueChangedListener
+    //3.Add new criterias to fromfields and tofields variables
+    //4.Add new criterias to PROJECTION
+    //5.Add new textviews to fragment_overall_statistics.xml file and adjust listview width below textviews to fit new width
+    //6.Add new textviews to team_list_statistics.xml file
 public class OverallStatisticsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
 
     // Store instance variables
     private String title;
     private int page;
     String sortOrder = "games_played DESC";
-    String[] sortStatsContent ={"Games Played", "Wins", "Loses", "Player", "Team"};
+    String[] sortStatsContent ={"Games Played", "Wins", "Loses", "Player", "Team", "Homewins", "Guestwins", "Homelolololossee", "Guestlolololossee  "};
     // This is the Adapter being used to display the list's data
     SimpleCursorAdapter mAdapter;
     ListView lv;
@@ -107,7 +115,15 @@ public class OverallStatisticsFragment extends Fragment implements LoaderManager
                     sortOrder = "loses DESC";
                 } else if(value.equals("Player")){
                     sortOrder = "player ASC";
-                } else {
+                } else if(value.equals("Homewins")){
+                    sortOrder = "home_wins DESC";
+                }else if(value.equals("Homelolololossee")){
+                    sortOrder = "home_loses DESC";
+                }else if(value.equals("Guestwins")){
+                    sortOrder = "guest_wins DESC";
+                }else if(value.equals("Guestlolololossee")){
+                    sortOrder = "guest_loses DESC";
+                }else {
                     sortOrder = "team ASC";
                 }
                 Log.v("sortOrder", sortOrder);
@@ -117,8 +133,8 @@ public class OverallStatisticsFragment extends Fragment implements LoaderManager
             }
         });
 
-        String[] fromFields = new String[]{"team", "player", "games_played", "wins", "loses"};
-        int[] toFields = new int[]{ R.id.team, R.id.player, R.id.games_played, R.id.wins, R.id.loses};
+        String[] fromFields = new String[]{"team", "player", "games_played", "wins", "loses", "home_wins", "home_loses", "guest_wins", "guest_loses"};
+        int[] toFields = new int[]{ R.id.team, R.id.player, R.id.games_played, R.id.wins, R.id.loses, R.id.home_wins, R.id.home_loses, R.id.guest_wins, R.id.guest_loses};
 
         mAdapter = new SimpleCursorAdapter(
                 getContext(),
@@ -162,7 +178,7 @@ public class OverallStatisticsFragment extends Fragment implements LoaderManager
     }
 
     static final String[] PROJECTION = new String[] {"_id, char",
-            "team", "player", "isReserved", "games_played", "wins", "loses"};
+            "team", "player", "isReserved", "games_played", "wins", "loses", "home_wins", "home_loses", "guest_wins", "guest_loses"};
 
     String[] selectionArgs = {"1"};
 

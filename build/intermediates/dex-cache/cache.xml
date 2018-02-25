@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94fca868854457ede6df15c902938468c71d579e">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-10.2.0_07aa149eb69149c991d013807ecc39ed9c53a431.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.0_d7ddfd6d7bc7e73e52d8e16587bdd98a3fcf3ce2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.1.0_95a86d3d434ad7d44ad4688a16d8acb0968911aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-10.2.0_525dfb3bbfe77f824f0d111f2d1e508b3a330cd2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1df6d719c4e264d66bb98baa5cb637495b8cca66">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-storage-common-10.2.0_4051b3c408ef1f0f36c8c159b79ca17ab874dae2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.1.0_2f925f9780a750fcbcc9a1e52de23ad703f43039.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-connection-10.2.0_a9c6f2618b080ff415610b679c854340cfa95e63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8e1d31656bc9f1889283836e025e6cb703acd38a">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-storage-10.2.0_25b3e2faeff46fd1aa6bca698c33dd6ad3be1aba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.1.0_d671b81b8c24db348e24b63b0f19be49ef0f2360.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-10.2.0_cb82235b08a9f3c8b3c9c5a7a7a1d980e72ee1fd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kauri/.gradle/caches/modules-2/files-2.1/io.socket/engine.io-client/0.8.3/854b49396e1e9f9bb0ab025062ddb49c4ed65ca1/engine.io-client-0.8.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="854b49396e1e9f9bb0ab025062ddb49c4ed65ca1">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/engine.io-client-0.8.3_c276f9a1d5c8d999177559551098a56a128f4348.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.1.0_9227f3a03c62329534ed74d12cc917f05e416649.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kauri/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/support-annotations-25.1.0_70a278def04258f1c63b5f863b1cda6c69260a7c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-10.2.0_2ace473266c6feb94950a755b86ceaa1fb784f4e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kauri/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.11.0/840897fcd7223a8143f1d9b6f69714e7be34fd50/okio-1.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/okio-1.11.0_74a033d0a5df974b266681e47c2e12033b44c129.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kauri/.gradle/caches/modules-2/files-2.1/io.socket/socket.io-client/0.8.3/b30500232ff0668a47c9f91f02e6935457a52fb5/socket.io-client-0.8.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b30500232ff0668a47c9f91f02e6935457a52fb5">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/socket.io-client-0.8.3_f3a2a96e8306a16085a4c3546bac74ad557ad794.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kauri/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.5.0/4b0bb6bfbecbdd42b97ff400af342bfe7f32bc83/okhttp-3.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b0bb6bfbecbdd42b97ff400af342bfe7f32bc83">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/okhttp-3.5.0_0488318ed89e8d42f25fab4c4859d49350b43a71.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.0_f2800d69ac65c8dbcfcdd8e55ca1188737aa2e4e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.1.0_4f006bf316a596cdc5264bb8afe83de819f94241.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.1.0_77f1a06e2cbac97e0b6c44679c4ffe52940ce005.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.1.0_9848d5579e021ea7a111f5d3e7671c3d1063337a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.1.0_2c81793788b86d263f3d8f0ba503400869935a8f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-design-25.1.0_29acb751dcacd7e9030aa570ea723acb2ac0d1ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.1.0_b72ea647bdc8241251f7570e0d2f9b4ebb36cba5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.1.0_6c04950f5fcdfa072e66b872b7b48d6ea698d463.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-10.2.0_e93df69bbeeb94fd439110ddd48520b3346a2424.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/media/kauri/16d3e820-7609-4acd-a342-c0a2d2dd044b/kauri/Documents/nhl97stuff/NHL97/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.1.0_a4262900b9839b5f930c23eae88d95617c05e36d.jar" />
+    </item>
+
+</items>
